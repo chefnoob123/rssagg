@@ -21,6 +21,7 @@ func main() {
 	if portString == "" {
 		log.Fatal("PORT was not found")
 	}
+
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options{
@@ -35,6 +36,7 @@ func main() {
 	v1router := chi.NewRouter()
 
 	v1router.Get("/healthz", handlerReadiness)
+	v1router.Get("/err", handlerErr)
 
 	router.Mount("/v1", v1router)
 
