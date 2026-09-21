@@ -1,3 +1,4 @@
+// Package auth provides authorization for a user accessing the API
 package auth
 
 import (
